@@ -1,13 +1,9 @@
 <script setup>
-// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
-import 'vue3-carousel/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-
-import { db } from '@/api/db.js'
+import { db } from "@/api/db.js";
 
 function createURL(src) {
-  const url = new URL(`../assets/images/` + src, import.meta.url).href
-  return url
+  const url = new URL(`../assets/images/` + src, import.meta.url).href;
+  return url;
 }
 </script>
 
