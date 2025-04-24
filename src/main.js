@@ -12,3 +12,5 @@ app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
+
+import 'bootstrap-icons/font/bootstrap-icons.css'
