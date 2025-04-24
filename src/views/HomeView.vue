@@ -57,13 +57,15 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 3.5vh 6vw;
-  background-color: #fff;
+  background-color: #f7f7f7;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .title {
   font-size: 1.3vw;
   font-weight: bold;
+ /* -webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: #000;*/
 }
 
 .title h1 {
