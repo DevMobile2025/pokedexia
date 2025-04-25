@@ -38,10 +38,167 @@ function createURL(src) {
       <img :src="createURL(pokemon.image)" alt="" />
     </div>
   </div>
-  <footer>ooiiiii</footer>
+  <footer>
+    <div class="footer-cima">
+      <div class="left">
+        <div class="title-footer">
+          <h1><strong>Poké<span id="dexia">dexia</span></strong> </h1>
+        </div>
+      </div>
+
+      <div class="center">
+        <h2>Entre em contato</h2>
+        <div class="contatos">
+          <h4 id="email">
+            <i class="bi bi-envelope"></i>
+            podexia@pokemon.com
+          </h4>
+          <h4>
+            <i class="bi bi-telephone"></i>
+            (47)91234-5678
+          </h4>
+        </div>
+
+      </div>
+
+      <div class="right">
+        <div class="contorno">
+          <img src="@/assets/images/pokebola.png" alt="hhhhhhhhhhh" class="pokebola">
+        </div>
+
+      </div>
+
+
+    </div>
+    <hr>
+    <p>Copyright © 2025 Pokedexia. Todos os direitos reservados </p>
+  </footer>
 </template>
 
 <style>
+footer hr{
+  width: 45%;
+  margin-bottom: 1vh;
+}
+footer p{
+  color: #D9D9D9;
+  font-family: 'Inter', sans-serif;
+}
+.footer-cima {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 35vh;
+  width: 100%;
+  padding-left: 7vw;
+  padding-right: 7vw;
+}
+
+.left {
+  height: 100%;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-footer {
+  font-size: 1.7vw;
+  font-weight: bold;
+  text-shadow:
+    -2px -2px 0 #D9D9D9,
+    2px -2px 0 #D9D9D9,
+    -2px 2px 0 #D9D9D9,
+    2px 2px 0 #D9D9D9,
+    0px 2px 0 #D9D9D9,
+    2px 0px 0 #D9D9D9,
+    0px -2px 0 #D9D9D9,
+    -2px 0px 0 #D9D9D9;
+
+
+}
+
+.title-footer h1 {
+  font-family: 'Jockey One', sans-serif;
+  font-weight: 800;
+  font-style: normal;
+
+}
+
+.center {
+
+  height: 100%;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5vh;
+
+}
+
+.center h2 {
+  font-family: "ADLaM Display", system-ui;
+  font-size: 2.25vw;
+  font-weight: 400;
+  color: #D9D9D9;
+}
+
+.contatos {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+  gap: 1.5vh;
+}
+
+.contatos h4 {
+  font-family: "ADLaM Display", system-ui;
+  font-size: 1.73vw;
+  font-weight: 100;
+  color: #D9D9D9;
+}
+
+.contatos i {
+  margin-right: 1vw;
+}
+
+#email {
+  text-decoration: underline;
+}
+
+.right {
+  height: 100%;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokebola {
+  height: 95%;
+  width: 95%;
+  object-fit: contain;
+}
+
+.contorno {
+  background-color: #D9D9D9;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  background-color: #B30000;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -64,7 +221,7 @@ header {
 .title {
   font-size: 1.3vw;
   font-weight: bold;
- /* -webkit-text-stroke-width: 2px;
+  /* -webkit-text-stroke-width: 2px;
 -webkit-text-stroke-color: #000;*/
 }
 
@@ -78,7 +235,7 @@ header {
   color: red;
 }
 
-i {
+header i {
   color: red;
   font-size: 1.3vw;
 }
@@ -130,14 +287,17 @@ i {
   color: red;
 }
 
-.option{
+.option {
   width: 6vw;
   display: flex;
   justify-content: space-around;
 }
+
 .linha-vertical {
-  height: 2vh;/*Altura da linha*/
-  border-left: 2px solid #D9D9D9;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
-  
+  height: 2vh;
+  /*Altura da linha*/
+  border-left: 2px solid #D9D9D9;
+  /* Adiciona borda esquerda na div como ser fosse uma linha.*/
+
 }
 </style>
