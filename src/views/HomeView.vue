@@ -1,4 +1,14 @@
 <script setup>
+// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
+import 'vue3-carousel/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+
+const carouselConfig = {
+  itemsToShow: 2.5,
+  wrapAround: true
+}
+
+
 import { db } from '@/api/db.js'
 
 function createURL(src) {
@@ -32,6 +42,10 @@ function createURL(src) {
       </div>
     </div>
   </header>
+  <Carousel></Carousel>
+  
+
+
   <div>
     <div v-for="(pokemon, id) in db.pokemons" :key="id">
       <!-- {{ pokemon.image }} -->
