@@ -3,11 +3,6 @@
 import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
-const carouselConfig = {
-  itemsToShow: 2.5,
-  wrapAround: true
-}
-
 
 import { db } from '@/api/db.js'
 
@@ -42,8 +37,23 @@ function createURL(src) {
       </div>
     </div>
   </header>
-  <Carousel></Carousel>
-  
+  <Carousel :items-to-show="1" :wrap-around="true" class="carousel-custom">
+    <Slide>
+      <div class="carousel-slide" style="background-color: red;">Slide Vermelho <!--<img src="@/assets/images/sliderImage.jpeg" alt="" class="sliderImage">--> </div>
+    </Slide>
+    <Slide>
+      <div class="carousel-slide" style="background-color: green;">Slide Verde</div>
+    </Slide>
+    <Slide>
+      <div class="carousel-slide" style="background-color: yellow;">Slide Amarelo</div>
+    </Slide>
+
+    <template #addons>
+      <Navigation />
+      <Pagination />
+    </template>
+  </Carousel>
+
 
 
   <div>
@@ -90,14 +100,77 @@ function createURL(src) {
 </template>
 
 <style>
-footer hr{
+.carousel__next, .carousel__prev {
+  background-color: #FF8C9B;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: background-color 0.3s;
+}
+
+/* Botão da direita */
+.carousel__next {
+  right: -25px; /* Metade do botão para fora */
+}
+
+/* Botão da esquerda */
+.carousel__prev {
+  left: -25px; /* Metade do botão para fora */
+}
+
+.carousel__next:hover, .carousel__prev:hover {
+  background-color: #ff6f84;
+}
+
+.sliderImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 2vw;
+  object-fit: cover; /* Faz a imagem preencher sem distorcer feio */
+}
+.carousel-custom {
+  position: relative;
+  width: 88%;
+  height: 53vh;
+  margin: auto;
+  overflow: visible; /* deixa visível o que passar */
+}
+
+
+.carousel-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 2vw;
+  color: white;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vw;
+}
+
+
+
+footer hr {
   width: 45%;
   margin-bottom: 1vh;
 }
-footer p{
+
+footer p {
   color: #D9D9D9;
   font-family: 'Inter', sans-serif;
 }
+
 .footer-cima {
   display: flex;
   flex-direction: row;
