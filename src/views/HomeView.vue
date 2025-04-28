@@ -414,22 +414,13 @@ function createURL(src) {
 }
 .pokemon-dia button{
   padding: 15px 30px;
-  /* Aumenta o tamanho do botão */
   font-size: 24px;
-  /* Aumenta o tamanho da fonte */
   cursor: pointer;
   background-color: #E39B00;
-  /* Cor de fundo do botão */
   color: white;
-  /* Cor do texto */
   border: none;
-  /* Remove a borda */
   border-radius: 1vw;
-  /* Bordas arredondadas */
   font-family: 'ADLaM Display', sans-serif;
-  /* Define a fonte */
-  transition: background-color 0.3s;
-  /* Transição suave para o hover */
 }
 .ver-mais {
   text-align: center;
@@ -438,22 +429,14 @@ function createURL(src) {
 
 .ver-mais button {
   padding: 15px 30px;
-  /* Aumenta o tamanho do botão */
   font-size: 24px;
-  /* Aumenta o tamanho da fonte */
   cursor: pointer;
   background-color: #8b0000;
-  /* Cor de fundo do botão */
   color: white;
-  /* Cor do texto */
   border: none;
-  /* Remove a borda */
   border-radius: 10px;
-  /* Bordas arredondadas */
   font-family: 'ADLaM Display', sans-serif;
-  /* Define a fonte */
   transition: background-color 0.3s;
-  /* Transição suave para o hover */
 }
 
 .ver-mais button:hover {
@@ -484,7 +467,7 @@ function createURL(src) {
 
 .nome-preco {
   text-align: center;
-  margin-top: 0.5vh;
+  margin-top: 3.5%;
 }
 
 .nome {
@@ -526,6 +509,12 @@ function createURL(src) {
   align-items: center;
   background-color: #d9d9d9;
   padding-top: 3vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.carta:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+  transition: 0.3s;
 }
 
 #titulos {
@@ -562,16 +551,12 @@ main {
   transition: 0.3s;
 }
 
-/* Botão da direita */
 .carousel__next {
   right: -50px;
-  /* Metade do botão para fora */
 }
 
-/* Botão da esquerda */
 .carousel__prev {
   left: -50px;
-  /* Metade do botão para fora */
 }
 
 .carousel__next:hover,
@@ -584,7 +569,6 @@ main {
   height: 100%;
   border-radius: 2vw;
   object-fit: cover;
-  /* Faz a imagem preencher sem distorcer feio */
 }
 
 .carousel-custom {
@@ -593,7 +577,6 @@ main {
   height: 55vh;
   margin: 5vh auto;
   overflow: visible;
-  /* deixa visível o que passar */
 }
 
 .carousel-slide {
@@ -750,8 +733,6 @@ header {
 .title {
   font-size: 1.3vw;
   font-weight: bold;
-  /* -webkit-text-stroke-width: 2px;
--webkit-text-stroke-color: #000;*/
 }
 
 .title h1 {
@@ -824,8 +805,6 @@ header i {
 
 .linha-vertical {
   height: 2vh;
-  /*Altura da linha*/
   border-left: 2px solid #d9d9d9;
-  /* Adiciona borda esquerda na div como ser fosse uma linha.*/
 }
 </style>
