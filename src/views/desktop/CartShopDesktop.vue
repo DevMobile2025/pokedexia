@@ -1,10 +1,53 @@
+<script setup>
+import { ref, onMounted, computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { getOneProduct } from '@/utils/';
+import { useCartStore, useToastStore } from '@/stores';
+import { AmountItems, ProductCard } from '@/components';
+
+const router = useRouter();
+const cartStore = useCartStore();
+const toastStore = useToastStore();
+const products = ref([]);
+const deliveryMethod = ref('');
+const priceAll = computed(() => products.value.reduce((acc, p) => acc + (p.amount * p.price), 0));
+const priceAllWithDelivery = computed(() => priceAll.value + ((deliveryMethod.value == 'premium') ? 22 : 15));
+
+function removeOneAmount(productId) {
+  const index = cartStore.findIndexProduct(productId);
+  if (cartStore.productsInCart[index].amount == 1) {
+    cartStore.removeItem(index);
+    products.value.splice(index, 1);
+    return;
+  }
+  cartStore.removeOneQuantity(index);
+}
+
+function removeItem(productId) {
+  const index = cartStore.findIndexProduct(productId);
+  
+  cartStore.removeItem(index);
+  products.value.splice(index, 1);
+  toastStore.sucess("Produto removido com sucesso!");
+}
+
+onMounted(async() => {
+  if (cartStore.productsInCart.length > 0) {
+    for (let i = 0; i < cartStore.productsInCart.length; i++) {
+      products.value.push(getOneProduct(cartStore.productsInCart[i].id));
+      products.value[products.value.length - 1].amount = cartStore.productsInCart[i].amount;
+    }
+  }
+})
+</script>
+
 <template>
     <div class="container-page">
       <div class="container-cart">
         <div class="container-left">
           <div class="container-header-cart">
             <h1 class="title">Carrinho</h1>
-            <p v-if="cartStore.productsInCart" class="amount-items">{{ cartStore.amountItems }} {{(cartStore.amountItems > 1 || cartStore.amountItems == 0) ? 'Itens' : 'Item' }}</p>
+            <AmountItems :style="'font-weight: 300; font-size: 1.2rem;'" :upper-case="false"/>
           </div>
           <div v-if="products.length > 0" class="container-products">
             <ProductCard v-for="(product, index) in products" :key="index" :product="product" @remove-one="removeOneAmount" @add-more-one="cartStore.updateCard" @remove-item="removeItem" />
@@ -19,7 +62,7 @@
             <h2 class="summary">Sumário</h2>
           </div>
           <div class="container-price-items">
-            <p class="sub-title-summary">{{(cartStore.amountItems > 1 || cartStore.amountItems == 0) ? 'ITENS' : 'ITEM' }}: {{ cartStore.amountItems }}</p>
+            <AmountItems :style="'color: #40485A; font-weight: 600;'" :upper-case="true" />
             <p class="price-items">R$ {{ priceAll.toFixed(2).replace(".", ",") }}</p>
           </div>
           <div class="container-inputs">
@@ -41,53 +84,12 @@
             <p class="final-amount">R$ {{ priceAllWithDelivery.toFixed(2).replace(".", ",") }}</p>
           </div>
           <div class="container-payment">
-            <button class="btn-payment">PAGAR</button>
+            <button class="btn-payment" @click="router.push('sucess')">PAGAR</button>
           </div>
         </div>
       </div>
     </div>
 </template>
-
-<script setup>
-import { ref, onMounted, computed } from 'vue';
-import { useRouter } from 'vue-router';
-import { getOneProduct } from '@/utils/';
-import { useCartStore } from '@/stores/cartStore';
-import { ProductCard } from '@/components';
-
-const router = useRouter();
-const cartStore = useCartStore();
-const products = ref([]);
-const deliveryMethod = ref('');
-const priceAll = computed(() => products.value.reduce((acc, p) => acc + (p.amount * p.price), 0));
-const priceAllWithDelivery = computed(() => priceAll.value + ((deliveryMethod.value == 'premium') ? 22 : 15));
-
-function removeOneAmount(productId) {
-  const index = cartStore.findIndexProduct(productId);
-  if (cartStore.productsInCart[index].amount == 1) {
-    cartStore.removeItem(index);
-    products.value.splice(index, 1);
-    return;
-  }
-  cartStore.removeOneQuantity(index);
-}
-
-function removeItem(productId) {
-  const index = cartStore.findIndexProduct(productId);
-  
-  cartStore.removeItem(index);
-  products.value.splice(index, 1);
-}
-
-onMounted(async() => {
-  if (cartStore.productsInCart.length > 0) {
-    for (let i = 0; i < cartStore.productsInCart.length; i++) {
-      products.value.push(getOneProduct(cartStore.productsInCart[i].id));
-      products.value[products.value.length - 1].amount = cartStore.productsInCart[i].amount;
-    }
-  }
-})
-</script>
 
 <style scoped>
 * {
@@ -132,11 +134,6 @@ onMounted(async() => {
 .title {
   font-size: 2rem;
   font-weight: 400;
-}
-
-.amount-items {
-  font-weight: 300;
-  font-size: 1.2rem;
 }
 
 .container-products {
@@ -244,4 +241,17 @@ onMounted(async() => {
   color: #000;
   border: 1px solid #000;
 } */
+
+@media (max-width: 1299px) {
+  .container-cart {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 1160px) {
+  .container-cart {
+    width: 100%;
+    height: 100%;
+  }
+}
 </style>
