@@ -1,3 +1,12 @@
+<script setup>
+import { createURL } from '@/utils';
+const props = defineProps({
+    product: Object
+})
+
+console.log(props.product);
+</script>
+
 <!-- eslint-disable vue/no-mutating-props -->
 <template>
     <div class="container-product">
@@ -22,14 +31,6 @@
     </div>
 </template>
 
-<script setup>
-import { createURL } from '@/utils';
-const props = defineProps({
-    product: Object
-})
-
-console.log(props.product);
-</script>
 
 <style scoped>
 
