@@ -37,31 +37,36 @@ function createURL(src) {
       </div>
     </div>
   </header>
-  <Carousel :items-to-show="1" :wrap-around="true" class="carousel-custom">
-    <Slide>
-      <div class="carousel-slide" style="background-color: red;">Slide Vermelho <!--<img src="@/assets/images/sliderImage.jpeg" alt="" class="sliderImage">--> </div>
-    </Slide>
-    <Slide>
-      <div class="carousel-slide" style="background-color: green;">Slide Verde</div>
-    </Slide>
-    <Slide>
-      <div class="carousel-slide" style="background-color: yellow;">Slide Amarelo</div>
-    </Slide>
+  <main>
+    <Carousel :items-to-show="1" :wrap-around="true" class="carousel-custom">
+      <Slide>
+        <div class="carousel-slide" style="background-color: red;">
+          <!--<img src="@/assets/images/sliderImage.jpeg" alt="" class="sliderImage">--> </div>
+      </Slide>
+      <Slide>
+        <div class="carousel-slide" style="background-color: green;"></div>
+      </Slide>
+      <Slide>
+        <div class="carousel-slide" style="background-color: yellow;"></div>
+      </Slide>
 
-    <template #addons>
-      <Navigation />
-      <Pagination />
-    </template>
-  </Carousel>
+      <template #addons>
+        <Navigation />
+        <Pagination />
+      </template>
+    </Carousel>
 
 
 
-  <div>
-    <div v-for="(pokemon, id) in db.pokemons" :key="id">
-      <!-- {{ pokemon.image }} -->
-      <img :src="createURL(pokemon.image)" alt="" />
+
+    <div>
+      <div v-for="(pokemon, id) in db.pokemons" :key="id">
+        <!-- {{ pokemon.image }} -->
+        <img :src="createURL(pokemon.image)" alt="" />
+      </div>
     </div>
-  </div>
+  </main>
+
   <footer>
     <div class="footer-cima">
       <div class="left">
@@ -100,50 +105,65 @@ function createURL(src) {
 </template>
 
 <style>
-.carousel__next, .carousel__prev {
+main {
+  background-color: #f7f7f7;
+}
+
+.carousel__prev svg,
+.carousel__next svg {
+  width: 30px;
+  height: 30px;
+}
+
+.carousel__next,
+.carousel__prev {
   background-color: #FF8C9B;
   border: none;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #8B0000;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   z-index: 2;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 
 /* Botão da direita */
 .carousel__next {
-  right: -25px; /* Metade do botão para fora */
+  right: -50px;
+  /* Metade do botão para fora */
 }
 
 /* Botão da esquerda */
 .carousel__prev {
-  left: -25px; /* Metade do botão para fora */
+  left: -50px;
+  /* Metade do botão para fora */
 }
 
-.carousel__next:hover, .carousel__prev:hover {
-  background-color: #ff6f84;
+.carousel__next:hover,
+.carousel__prev:hover {
+  background-color: #fa7286;
 }
 
 .sliderImage {
   width: 100%;
   height: 100%;
   border-radius: 2vw;
-  object-fit: cover; /* Faz a imagem preencher sem distorcer feio */
+  object-fit: cover;
+  /* Faz a imagem preencher sem distorcer feio */
 }
+
 .carousel-custom {
   position: relative;
-  width: 88%;
-  height: 53vh;
-  margin: auto;
-  overflow: visible; /* deixa visível o que passar */
+  width: 85%;
+  height: 55vh;
+  margin: 5vh auto;
+  overflow: visible;
+  /* deixa visível o que passar */
 }
 
 
