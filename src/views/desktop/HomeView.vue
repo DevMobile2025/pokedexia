@@ -1,10 +1,5 @@
 <script setup>
 import { db } from "@/api/db.js";
-
-function createURL(src) {
-  const url = new URL(`../assets/images/` + src, import.meta.url).href;
-  return url;
-}
 </script>
 
 <template>

@@ -10,17 +10,22 @@ const router = createRouter({
         {
           path: '',
           name: 'home',
-          component: () => import('@/views/HomeView.vue')
+          component: () => import('@/views/desktop/HomeView.vue')
         },
         {
           path: 'signup',
           name: 'signUp',
-          component: () => import('@/views/SignUpView.vue')
+          component: () => import('@/views/desktop/SignUpView.vue')
         },
         {
           path: 'cartshop',
           name: 'cartShop',
-          component: () => import('@/views/CartShopView.vue')
+          component: () => import('@/views/default/CartShopView.vue')
+        },
+        {
+          path: 'sucess',
+          name: 'sucess',
+          component: () => import('@/views/desktop/PaymentSuccesfull.vue')
         }
       ]
     }
