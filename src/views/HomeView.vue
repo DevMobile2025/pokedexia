@@ -3,7 +3,6 @@
 import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
-
 import { db } from '@/api/db.js'
 
 function createURL(src) {
@@ -40,14 +39,15 @@ function createURL(src) {
   <main>
     <Carousel :items-to-show="1" :wrap-around="true" class="carousel-custom">
       <Slide>
-        <div class="carousel-slide" style="background-color: red;">
-          <!--<img src="@/assets/images/sliderImage.jpeg" alt="" class="sliderImage">--> </div>
+        <div class="carousel-slide" style="background-color: red">
+          <!--<img src="@/assets/images/sliderImage.jpeg" alt="" class="sliderImage">-->
+        </div>
       </Slide>
       <Slide>
-        <div class="carousel-slide" style="background-color: green;"></div>
+        <div class="carousel-slide" style="background-color: green"></div>
       </Slide>
       <Slide>
-        <div class="carousel-slide" style="background-color: yellow;"></div>
+        <div class="carousel-slide" style="background-color: yellow"></div>
       </Slide>
 
       <template #addons>
@@ -56,22 +56,224 @@ function createURL(src) {
       </template>
     </Carousel>
 
-
-
-
-    <div>
-      <div v-for="(pokemon, id) in db.pokemons" :key="id">
-        <!-- {{ pokemon.image }} -->
-        <img :src="createURL(pokemon.image)" alt="" />
+    <h2 id="titulos">Cartas Pokemon</h2>
+    <div class="mais-vendidas">
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
       </div>
     </div>
+    <h2 id="titulos">Filtrar por tipo:</h2>
+
+    <div class="carrossel-tipos">
+      <div class="underline"></div>
+
+      <Carousel :items-to-show="5" :wrap-around="true" class="carousel-tipos">
+        <Slide>
+          <div class="tipo-bola" style="background-color: #5c5c70"></div>
+        </Slide>
+        <Slide>
+          <div class="tipo-bola" style="background-color: #f5d547"></div>
+        </Slide>
+        <Slide>
+          <div class="tipo-bola" style="background-color: #2589d6"></div>
+        </Slide>
+        <Slide>
+          <div class="tipo-bola" style="background-color: #f44336"></div>
+        </Slide>
+        <Slide>
+          <div class="tipo-bola" style="background-color: #ec8eff"></div>
+        </Slide>
+        <Slide>
+          <div class="tipo-bola" style="background-color: #ff9900"></div>
+        </Slide>
+        <Slide>
+          <div class="tipo-bola" style="background-color: #8baeff"></div>
+        </Slide>
+        <Slide>
+          <div class="tipo-bola" style="background-color: #a8a77a"></div>
+        </Slide>
+        <Slide>
+          <div class="tipo-bola" style="background-color: #c22e28"></div>
+        </Slide>
+        <Slide>
+          <div class="tipo-bola" style="background-color: #7ac74c"></div>
+        </Slide>
+
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
+    </div>
+
+    <h3
+      style="
+        color: #470000;
+        margin-left: 10vw;
+        margin-top: 10vh;
+        font-size: 1.5vw;
+        font-family:
+          ADLaM Display,
+          sans-serif;
+      "
+    >
+      Mais vendidos
+    </h3>
+
+    <div class="mais-vendidas">
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+      </div>
+    </div>
+    <div class="ver-mais">
+      <button>Ver Mais...</button>
+    </div>
+
+    <h2 id="titulos">Pokemon do dia</h2>
+    <div class="pokemon-dia">
+      <div class="pokemon-day">
+      <div class="pokemon-info">
+        <h3>Pikachu #0025</h3>
+        <p><strong>Tipo:</strong> Elétrico</p>
+        <p><strong>Altura:</strong> 0,4 m</p>
+        <p><strong>Peso:</strong> 6 kg</p>
+        <button class="see-cards">Ver cartas...</button>
+      </div>
+      <div class="pokemon-image">
+        <img src="@/assets/images/pikachu.png" alt="Pikachu" />
+      </div>
+    </div>
+    </div>
+    
+    <div class="newsletter">
+      <div class="chamado">
+        <h3>Assine nossa newsletter e seja
+          avisado das novidades!</h3>
+          <div class="email">
+            <i class="bi bi-envelope"></i><input type="email" placeholder="seu email...">
+          </div>
+      </div>
+      <div class="pokemons">
+        <img src="@/assets/images/pokemons.png" alt="">
+      </div>
+    </div>
+    <!-- <div>
+      <div v-for="(pokemon, id) in db.pokemons" :key="id">
+       {{ pokemon.image }} 
+        <img :src="createURL(pokemon.image)" alt="" />
+      </div>
+    </div>-->
+   
   </main>
 
   <footer>
     <div class="footer-cima">
       <div class="left">
         <div class="title-footer">
-          <h1><strong>Poké<span id="dexia">dexia</span></strong> </h1>
+          <h1>
+            <strong>Poké<span id="dexia">dexia</span></strong>
+          </h1>
         </div>
       </div>
 
@@ -87,24 +289,252 @@ function createURL(src) {
             (47)91234-5678
           </h4>
         </div>
-
       </div>
 
       <div class="right">
         <div class="contorno">
-          <img src="@/assets/images/pokebola.png" alt="hhhhhhhhhhh" class="pokebola">
+          <img src="@/assets/images/pokebola.png" alt="" class="pokebola" />
         </div>
-
       </div>
-
-
     </div>
-    <hr>
-    <p>Copyright © 2025 Pokedexia. Todos os direitos reservados </p>
+    <hr />
+    <p>Copyright © 2025 Pokedexia. Todos os direitos reservados</p>
   </footer>
 </template>
 
 <style>
+.email{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5vw;
+  margin-top: 1vh;
+}
+.email i{
+  font-size: 1.5vw;
+  color: #fff;
+}
+.email input{
+  border: none;
+  padding-left: .5vw;
+  background-color: #d9d9d9;
+  width: 12vw;
+  height: 5vh;
+  border-radius: 2vw;
+}
+.pokemons{
+ width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pokemons img{
+  width: 230px;
+  height: 230px;
+  object-fit: contain;
+  width: 100%;
+}
+.chamado{
+  padding-left: 3vw;
+  padding-right: 3vw;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.chamado h3{
+  font-family: 'Jockey One', sans-serif;
+  font-size: 1.7vw;
+  color: #d9d9d9;
+  font-weight: 400;
+}
+.newsletter{
+  margin-top: 20vh;
+  height: 35vh;
+  width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  border-radius: 2vw;
+  background-color: #7a0000;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20vh;
+}
+.pokemon-dia{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+.pokemon-day {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color:#F8DD72;
+  border: 5px solid #E39B00;
+  border-radius: 2vw;
+  padding: 20px;
+  width: 60vw;
+  height: 60vh;
+}
+.pokemon-info{
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'ADLaM Display', sans-serif;
+  
+  justify-content: space-around;
+}
+.pokemon-info h3 {
+  font-size: 2.3vw;
+}
+
+.pokemon-info p{
+  font-size: 1.3vw;
+}
+
+.pokemon-image{
+  background-color: #FFAE00;
+  border-radius: 50%;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-image img {
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+  position: relative;
+  left: 1.2vw;
+}
+.pokemon-dia button{
+  padding: 15px 30px;
+  /* Aumenta o tamanho do botão */
+  font-size: 24px;
+  /* Aumenta o tamanho da fonte */
+  cursor: pointer;
+  background-color: #E39B00;
+  /* Cor de fundo do botão */
+  color: white;
+  /* Cor do texto */
+  border: none;
+  /* Remove a borda */
+  border-radius: 1vw;
+  /* Bordas arredondadas */
+  font-family: 'ADLaM Display', sans-serif;
+  /* Define a fonte */
+  transition: background-color 0.3s;
+  /* Transição suave para o hover */
+}
+.ver-mais {
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+.ver-mais button {
+  padding: 15px 30px;
+  /* Aumenta o tamanho do botão */
+  font-size: 24px;
+  /* Aumenta o tamanho da fonte */
+  cursor: pointer;
+  background-color: #8b0000;
+  /* Cor de fundo do botão */
+  color: white;
+  /* Cor do texto */
+  border: none;
+  /* Remove a borda */
+  border-radius: 10px;
+  /* Bordas arredondadas */
+  font-family: 'ADLaM Display', sans-serif;
+  /* Define a fonte */
+  transition: background-color 0.3s;
+  /* Transição suave para o hover */
+}
+
+.ver-mais button:hover {
+  background-color: #7a0000;
+}
+
+.carrossel-tipos {
+  margin-top: 5vh;
+  text-align: center;
+}
+
+.filtrar-titulo {
+  font-size: 2vw;
+  font-family: 'ADLaM Display', sans-serif;
+}
+
+.carousel-tipos {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.tipo-bola {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.nome-preco {
+  text-align: center;
+  margin-top: 0.5vh;
+}
+
+.nome {
+  font-family: 'Actor', sans-serif;
+  font-weight: 400;
+  font-size: 1.2vw;
+}
+
+.preco {
+  font-family: 'Actor', sans-serif;
+  color: #bd0000;
+  font-weight: 400;
+  font-size: 1.2vw;
+}
+
+.img-pokemon {
+  width: 212px;
+  height: 296px;
+}
+
+.mais-vendidas {
+  margin-top: 7vh;
+  margin-bottom: 3vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.carta {
+  width: 17vw;
+  height: 55vh;
+  border-radius: 23px;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d9d9d9;
+  padding-top: 3vh;
+}
+
+#titulos {
+  font-size: 2vw;
+  font-family: 'ADLaM Display', sans-serif;
+  text-decoration: underline #f50606 6px;
+  margin-left: 10vw;
+}
+
 main {
   background-color: #f7f7f7;
 }
@@ -115,9 +545,9 @@ main {
   height: 30px;
 }
 
-.carousel__next,
-.carousel__prev {
-  background-color: #FF8C9B;
+.carousel-custom .carousel__next,
+.carousel-custom .carousel__prev {
+  background-color: #ff8c9b;
   border: none;
   width: 100px;
   height: 100px;
@@ -125,7 +555,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8B0000;
+  color: #8b0000;
   position: absolute;
   top: 50%;
   z-index: 2;
@@ -166,7 +596,6 @@ main {
   /* deixa visível o que passar */
 }
 
-
 .carousel-slide {
   width: 100%;
   height: 100%;
@@ -179,15 +608,13 @@ main {
   border-radius: 2vw;
 }
 
-
-
 footer hr {
   width: 45%;
   margin-bottom: 1vh;
 }
 
 footer p {
-  color: #D9D9D9;
+  color: #d9d9d9;
   font-family: 'Inter', sans-serif;
 }
 
@@ -213,41 +640,36 @@ footer p {
   font-size: 1.7vw;
   font-weight: bold;
   text-shadow:
-    -2px -2px 0 #D9D9D9,
-    2px -2px 0 #D9D9D9,
-    -2px 2px 0 #D9D9D9,
-    2px 2px 0 #D9D9D9,
-    0px 2px 0 #D9D9D9,
-    2px 0px 0 #D9D9D9,
-    0px -2px 0 #D9D9D9,
-    -2px 0px 0 #D9D9D9;
-
-
+    -2px -2px 0 #d9d9d9,
+    2px -2px 0 #d9d9d9,
+    -2px 2px 0 #d9d9d9,
+    2px 2px 0 #d9d9d9,
+    0px 2px 0 #d9d9d9,
+    2px 0px 0 #d9d9d9,
+    0px -2px 0 #d9d9d9,
+    -2px 0px 0 #d9d9d9;
 }
 
 .title-footer h1 {
   font-family: 'Jockey One', sans-serif;
   font-weight: 800;
   font-style: normal;
-
 }
 
 .center {
-
   height: 100%;
   width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 5vh;
-
 }
 
 .center h2 {
-  font-family: "ADLaM Display", system-ui;
+  font-family: 'ADLaM Display', system-ui;
   font-size: 2.25vw;
   font-weight: 400;
-  color: #D9D9D9;
+  color: #d9d9d9;
 }
 
 .contatos {
@@ -259,10 +681,10 @@ footer p {
 }
 
 .contatos h4 {
-  font-family: "ADLaM Display", system-ui;
+  font-family: 'ADLaM Display', system-ui;
   font-size: 1.73vw;
   font-weight: 100;
-  color: #D9D9D9;
+  color: #d9d9d9;
 }
 
 .contatos i {
@@ -288,7 +710,7 @@ footer p {
 }
 
 .contorno {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   width: 150px;
   height: 150px;
   border-radius: 100%;
@@ -298,7 +720,7 @@ footer p {
 }
 
 footer {
-  background-color: #B30000;
+  background-color: #b30000;
   height: 40vh;
   width: 100%;
   display: flex;
@@ -377,7 +799,7 @@ header i {
   align-items: center;
   justify-content: space-around;
   gap: 1vw;
-  font-size: .8vw;
+  font-size: 0.8vw;
   color: black;
   font-family: 'Actor', sans-serif;
   font-weight: 400;
@@ -403,8 +825,7 @@ header i {
 .linha-vertical {
   height: 2vh;
   /*Altura da linha*/
-  border-left: 2px solid #D9D9D9;
+  border-left: 2px solid #d9d9d9;
   /* Adiciona borda esquerda na div como ser fosse uma linha.*/
-
 }
 </style>
