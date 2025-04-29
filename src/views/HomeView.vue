@@ -164,17 +164,9 @@ function createURL(src) {
       </Carousel>
     </div>
 
-    <h3 style="
-        color: #470000;
-        margin-left: 10vw;
-        margin-top: 10vh;
-        font-size: 1.5vw;
-        font-family:
-          ADLaM Display,
-          sans-serif;
-      ">
-      Mais vendidos
-    </h3>
+    <h3
+      style="color: #470000;margin-left: 10vw;margin-top: 10vh;font-size: 1.5rem;font-family:ADLaM Display,sans-serif;">
+      Mais vendidos</h3>
 
     <div class="mais-vendidas">
       <div class="carta">
@@ -351,7 +343,6 @@ function createURL(src) {
 </template>
 
 <style>
-
 .email {
   display: flex;
   align-items: center;
@@ -361,7 +352,7 @@ function createURL(src) {
 }
 
 .email i {
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   color: #fff;
 }
 
@@ -542,7 +533,7 @@ function createURL(src) {
   font-family: 'Actor', sans-serif;
   color: #bd0000;
   font-weight: 400;
-  font-size: 1.2vw;
+  font-size: 1.2rem;
 }
 
 .img-pokemon {
@@ -586,6 +577,7 @@ function createURL(src) {
   text-decoration: underline #f50606 6px;
   margin-left: 10vw;
 }
+
 .add-carrinho {
   display: flex;
   justify-content: center;
@@ -603,7 +595,7 @@ function createURL(src) {
   cursor: pointer;
   transition: background-color 0.3s;
   margin-top: 1vh;
-  
+
 }
 
 .add-carrinho button:hover {
@@ -781,7 +773,7 @@ footer p {
 
 .contatos h4 {
   font-family: 'ADLaM Display', system-ui;
-  font-size: 1.73vw;
+  font-size: 1.5vw;
   font-weight: 100;
   color: #d9d9d9;
 }
@@ -923,39 +915,54 @@ header i {
   height: 2vh;
   border-left: 2px solid #d9d9d9;
 }
+
 @media (max-width: 768px) {
+
+
   .newsletter {
-    flex-direction: row; /* Itens lado a lado */
-    justify-content: center; /* Centralizar */
+    flex-direction: row;
+    /* Itens lado a lado */
+    justify-content: center;
+    /* Centralizar */
     align-items: center;
     width: 90vw;
     margin: 10vh auto;
-    gap: 2vw; /* Espaçamento entre os itens */
+    gap: 2vw;
+    /* Espaçamento entre os itens */
   }
 
   .newsletter .input-container {
-    width: 60%; /* Tamanho menor do input */
+    width: 60%;
+    /* Tamanho menor do input */
     padding: 10px;
   }
 
   .newsletter input {
     width: 100%;
     padding: 8px 16px;
-    font-size: 1.5vw; /* Tamanho adequado */
+    font-size: 1.5vw;
+    /* Tamanho adequado */
     border-radius: 1vw;
     background-color: #d9d9d9;
     font-family: 'Actor', sans-serif;
   }
 
- 
+  .pokemons {
+    width: 45vw;
+    
+  }
+
+  .pokemons img {
+    width: 100%;
+  }
 
   /* Ajustando o título da newsletter */
   .newsletter h3 {
     text-align: center;
     width: 100%;
     margin-bottom: 3vh;
-    font-size: 1rem;
-    color: #d9d9d9; /* Adicionando cor */
+    font-size: 1.3rem;
+    color: #d9d9d9;
   }
 
   .pokemon-day {
@@ -974,37 +981,42 @@ header i {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 5vw; /* ou ajuste o valor conforme necessário */
+    gap: 5vw;
+    /* ou ajuste o valor conforme necessário */
   }
 
   .carta {
-    width: 45%; /* duas cartas por linha (100% / 2 = 50%, mas com gap fica 45% para ajustes) */
-    height: auto; /* ajuste a altura das cartas conforme necessário */
+    width: 45%;
+    /* duas cartas por linha (100% / 2 = 50%, mas com gap fica 45% para ajustes) */
+    height: auto;
+    /* ajuste a altura das cartas conforme necessário */
   }
 
-  
-  .sliderImage{
-    object-fit: contain;
+
+  .sliderImage {
+    object-fit: cover;
     background-color: red;
   }
-  
-  
-  
+
+
+
   .add-carrinho button {
-    padding: 8px 16px;  /* Reduzindo o padding */
-    font-size: 0.8rem;   /* Diminuindo o tamanho da fonte */
-    border-radius: 6px;  /* Ajustando o border-radius */
+    padding: 8px 16px;
+    /* Reduzindo o padding */
+    font-size: 0.8rem;
+    /* Diminuindo o tamanho da fonte */
+    border-radius: 6px;
+    /* Ajustando o border-radius */
   }
- 
+
 
   /* Aumentando o tamanho do nome da carta e do preço */
   .nome {
-    font-size: 2.4vw; /* Aumentando o tamanho do nome da carta */
+    font-size: 2.4vw;
+    /* Aumentando o tamanho do nome da carta */
   }
 
-  .preco {
-    font-size: 1.4vw; /* Aumentando o tamanho do preço */
-  }
+
 
   .footer-cima {
     flex-direction: column;
@@ -1012,77 +1024,121 @@ header i {
     padding: 5vh 5vw;
   }
 
-  .title-footer h1 {
-    font-size: 8vw;
-  }
-  .carousel-custom {
-    width: 88%;  /* Ajustando a largura do carrossel para telas menores */
-    height: 25.7vh; /* Ajustando a altura do carrossel */
-    margin: 5vh auto;  /* Centralizando o carrossel */
+  footer {
+    height: 45vh;
   }
 
+  .title-footer h1 {
+    font-size: 5vw;
+  }
+
+  .footer-cima {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .pokebola {
+    height: 95%;
+    width: 95%;
+    object-fit: contain;
+  }
+
+  .contorno {
+    background-color: #d9d9d9;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .center h2 {
+    font-size: 3.5vw;
+  }
+
+  .contatos h4 {
+    font-size: 2.5vw;
+  }
+
+  .contatos {
+    margin-bottom: 5vh;
+  }
+
+
+
   .carousel-slide {
-    font-size: 1.5vw;  /* Reduzindo o tamanho da fonte nos slides para telas menores */
-    padding: 0 2vw;  /* Adicionando um pouco de padding para dar espaço nos lados */
+    font-size: 1.5vw;
+    /* Reduzindo o tamanho da fonte nos slides para telas menores */
+    padding: 0 2vw;
+    /* Adicionando um pouco de padding para dar espaço nos lados */
   }
 
   .carousel__pagination {
     display: none;
   }
+
   .carousel-custom {
-    width: 88%;  /* Ajustando a largura do carrossel para telas menores */
-    height: 26.1vh; /* Ajustando a altura do carrossel */
-    margin: 5vh auto;  /* Centralizando o carrossel */
-    position: relative;  /* Tornando o carrossel um contêiner de posição relativa */
+    width: 87%;
+    height: 26vh;
+    margin: 5vh auto;
+    position: relative;
   }
 
-  /* Botões de navegação do carrossel */
   .carousel-custom .carousel__next,
   .carousel-custom .carousel__prev {
-    width: 60px;  /* Tamanho do botão de navegação */
-    height: 60px; /* Tamanho do botão de navegação */
-    font-size: 18px;  /* Ajustando o tamanho da fonte do ícone dentro dos botões */
-    top: 50%;  /* Centralizando verticalmente */
-    transform: translateY(-50%);  /* Corrigindo o alinhamento vertical */
-    background-color: #fa7286;  /* Cor do botão */
-    border-radius: 50%;  /* Fazendo o botão ficar redondo */
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fa7286;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-   .carousel__next {
-    right: -17px;  /* Colocando o botão direito para fora do carrossel */
+  .carousel__next {
+    right: -17px;
+    /* Colocando o botão direito para fora do carrossel */
     position: absolute;
   }
 
   .carousel__prev {
-    left: -17px;  /* Colocando o botão esquerdo para fora do carrossel */
+    left: -17px;
+    /* Colocando o botão esquerdo para fora do carrossel */
     position: absolute;
   }
 
   /* Mudança de cor ao passar o mouse */
   .carousel__next:hover,
   .carousel__prev:hover {
-    background-color: #e46b7b;  /* Cor de destaque ao passar o mouse */
-  }.pokemon-dia {
+    background-color: #e46b7b;
+    /* Cor de destaque ao passar o mouse */
+  }
+
+  .pokemon-dia {
     margin-top: 5vh;
     width: 100%;
   }
 
   .pokemon-day {
-    flex-direction: row; /* Mudando para exibir lado a lado */
+    flex-direction: row;
+    /* Mudando para exibir lado a lado */
     align-items: center;
     justify-content: space-around;
     height: auto;
     width: 90vw;
     padding: 2vh 4vw;
-    gap: 2vw; /* Ajuste do espaçamento */
+    gap: 2vw;
+    /* Ajuste do espaçamento */
   }
 
   .pokemon-info {
     height: auto;
-    width: 45vw; /* Diminuindo para ficar proporcional */
+    width: 45vw;
+    /* Diminuindo para ficar proporcional */
     align-items: flex-start;
     text-align: left;
     gap: 0.5vh;
@@ -1103,15 +1159,76 @@ header i {
   }
 
   .pokemon-image {
-    width: 40vw; /* Menor para ajustar lado a lado */
+    width: 40vw;
+    /* Menor para ajustar lado a lado */
     height: 40vw;
   }
 
   .pokemon-image img {
-    width: 85%;
-    height: 85%;
-    object-fit: cover; /* Garantindo que a imagem preencha bem o espaço */
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    position: relative;
+    left: 4vw;
   }
- 
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.5vh 6vw;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .title {
+    font-size: 1.7vw;
+    font-weight: bold;
+  }
+
+  .title h1 {
+    font-family: 'Jockey One', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+  header i {
+    font-size: 2.3vw;
+  }
+
+  .search-container {
+    flex: 1;
+    margin: 0 40px;
+    max-width: 50vw;
+  }
+
+  .search-container input {
+    width: 100%;
+    padding: 10px 16px 10px 36px;
+    border: 1px solid red;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .user-options p {
+    display: none;
+  }
+
+
+
+
+  .option {
+    width: 6vw;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .linha-vertical {
+    height: 2vh;
+    border-left: 2px solid #d9d9d9;
+  }
 }
 </style>
