@@ -39,15 +39,29 @@ function createURL(src) {
   <main>
     <Carousel :items-to-show="1" :wrap-around="true" class="carousel-custom">
       <Slide>
-        <div class="carousel-slide" style="background-color: red">
-          <!--<img src="@/assets/images/sliderImage.jpeg" alt="" class="sliderImage">-->
+        <div class="carousel-slide">
+          <img src="@/assets/images/carrossel-1.png" alt="" class="sliderImage">
         </div>
       </Slide>
       <Slide>
-        <div class="carousel-slide" style="background-color: green"></div>
+        <div class="carousel-slide">
+          <img src="@/assets/images/carrossel-2.png" alt="" class="sliderImage">
+        </div>
       </Slide>
       <Slide>
-        <div class="carousel-slide" style="background-color: yellow"></div>
+        <div class="carousel-slide">
+          <img src="@/assets/images/carrossel-3.png" alt="" class="sliderImage">
+        </div>
+      </Slide>
+      <Slide>
+        <div class="carousel-slide">
+          <img src="@/assets/images/carrossel-4.png" alt="" class="sliderImage">
+        </div>
+      </Slide>
+      <Slide>
+        <div class="carousel-slide">
+          <img src="@/assets/images/carrossel-5.png" alt="" class="sliderImage">
+        </div>
       </Slide>
 
       <template #addons>
@@ -66,14 +80,8 @@ function createURL(src) {
           <p class="nome">Clefairy</p>
           <p class="preco">R$ 450,00</p>
         </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
         </div>
       </div>
       <div class="carta">
@@ -84,6 +92,9 @@ function createURL(src) {
           <p class="nome">Clefairy</p>
           <p class="preco">R$ 450,00</p>
         </div>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
+        </div>
       </div>
       <div class="carta">
         <div class="carta-img">
@@ -92,6 +103,21 @@ function createURL(src) {
         <div class="nome-preco">
           <p class="nome">Clefairy</p>
           <p class="preco">R$ 450,00</p>
+        </div>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
         </div>
       </div>
     </div>
@@ -138,8 +164,7 @@ function createURL(src) {
       </Carousel>
     </div>
 
-    <h3
-      style="
+    <h3 style="
         color: #470000;
         margin-left: 10vw;
         margin-top: 10vh;
@@ -147,8 +172,7 @@ function createURL(src) {
         font-family:
           ADLaM Display,
           sans-serif;
-      "
-    >
+      ">
       Mais vendidos
     </h3>
 
@@ -161,14 +185,8 @@ function createURL(src) {
           <p class="nome">Clefairy</p>
           <p class="preco">R$ 450,00</p>
         </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
         </div>
       </div>
       <div class="carta">
@@ -179,14 +197,8 @@ function createURL(src) {
           <p class="nome">Clefairy</p>
           <p class="preco">R$ 450,00</p>
         </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
         </div>
       </div>
       <div class="carta">
@@ -197,14 +209,8 @@ function createURL(src) {
           <p class="nome">Clefairy</p>
           <p class="preco">R$ 450,00</p>
         </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
         </div>
       </div>
       <div class="carta">
@@ -215,6 +221,9 @@ function createURL(src) {
           <p class="nome">Clefairy</p>
           <p class="preco">R$ 450,00</p>
         </div>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
+        </div>
       </div>
       <div class="carta">
         <div class="carta-img">
@@ -223,6 +232,45 @@ function createURL(src) {
         <div class="nome-preco">
           <p class="nome">Clefairy</p>
           <p class="preco">R$ 450,00</p>
+        </div>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
+        </div>
+      </div>
+      <div class="carta">
+        <div class="carta-img">
+          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+        </div>
+        <div class="nome-preco">
+          <p class="nome">Clefairy</p>
+          <p class="preco">R$ 450,00</p>
+        </div>
+        <div class="add-carrinho">
+          <button>Adicionar ao carrinho</button>
         </div>
       </div>
     </div>
@@ -233,26 +281,26 @@ function createURL(src) {
     <h2 id="titulos">Pokemon do dia</h2>
     <div class="pokemon-dia">
       <div class="pokemon-day">
-      <div class="pokemon-info">
-        <h3>Pikachu #0025</h3>
-        <p><strong>Tipo:</strong> Elétrico</p>
-        <p><strong>Altura:</strong> 0,4 m</p>
-        <p><strong>Peso:</strong> 6 kg</p>
-        <button class="see-cards">Ver cartas...</button>
-      </div>
-      <div class="pokemon-image">
-        <img src="@/assets/images/pikachu.png" alt="Pikachu" />
+        <div class="pokemon-info">
+          <h3>Pikachu #0025</h3>
+          <p><strong>Tipo:</strong> Elétrico</p>
+          <p><strong>Altura:</strong> 0,4 m</p>
+          <p><strong>Peso:</strong> 6 kg</p>
+          <button class="see-cards">Ver cartas...</button>
+        </div>
+        <div class="pokemon-image">
+          <img src="@/assets/images/pikachu.png" alt="Pikachu" />
+        </div>
       </div>
     </div>
-    </div>
-    
+
     <div class="newsletter">
       <div class="chamado">
         <h3>Assine nossa newsletter e seja
           avisado das novidades!</h3>
-          <div class="email">
-            <i class="bi bi-envelope"></i><input type="email" placeholder="seu email...">
-          </div>
+        <div class="email">
+          <i class="bi bi-envelope"></i><input type="email" placeholder="seu email...">
+        </div>
       </div>
       <div class="pokemons">
         <img src="@/assets/images/pokemons.png" alt="">
@@ -264,7 +312,7 @@ function createURL(src) {
         <img :src="createURL(pokemon.image)" alt="" />
       </div>
     </div>-->
-   
+
   </main>
 
   <footer>
@@ -303,18 +351,21 @@ function createURL(src) {
 </template>
 
 <style>
-.email{
+
+.email {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: .5vw;
   margin-top: 1vh;
 }
-.email i{
+
+.email i {
   font-size: 1.5vw;
   color: #fff;
 }
-.email input{
+
+.email input {
   border: none;
   padding-left: .5vw;
   background-color: #d9d9d9;
@@ -322,19 +373,22 @@ function createURL(src) {
   height: 5vh;
   border-radius: 2vw;
 }
-.pokemons{
- width: 60%;
+
+.pokemons {
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.pokemons img{
+
+.pokemons img {
   width: 230px;
   height: 230px;
   object-fit: contain;
   width: 100%;
 }
-.chamado{
+
+.chamado {
   padding-left: 3vw;
   padding-right: 3vw;
   width: 40%;
@@ -344,13 +398,15 @@ function createURL(src) {
   justify-content: center;
   text-align: center;
 }
-.chamado h3{
+
+.chamado h3 {
   font-family: 'Jockey One', sans-serif;
   font-size: 1.7vw;
   color: #d9d9d9;
   font-weight: 400;
 }
-.newsletter{
+
+.newsletter {
   margin-top: 20vh;
   height: 35vh;
   width: 70vw;
@@ -362,40 +418,44 @@ function createURL(src) {
   flex-direction: row;
   margin-bottom: 20vh;
 }
-.pokemon-dia{
+
+.pokemon-dia {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5vh;
 }
+
 .pokemon-day {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color:#F8DD72;
+  background-color: #F8DD72;
   border: 5px solid #E39B00;
   border-radius: 2vw;
   padding: 20px;
   width: 60vw;
   height: 60vh;
 }
-.pokemon-info{
+
+.pokemon-info {
   height: 40vh;
   display: flex;
   flex-direction: column;
   font-family: 'ADLaM Display', sans-serif;
-  
+
   justify-content: space-around;
 }
+
 .pokemon-info h3 {
   font-size: 2.3vw;
 }
 
-.pokemon-info p{
+.pokemon-info p {
   font-size: 1.3vw;
 }
 
-.pokemon-image{
+.pokemon-image {
   background-color: #FFAE00;
   border-radius: 50%;
   width: 380px;
@@ -412,7 +472,8 @@ function createURL(src) {
   position: relative;
   left: 1.2vw;
 }
-.pokemon-dia button{
+
+.pokemon-dia button {
   padding: 15px 30px;
   font-size: 24px;
   cursor: pointer;
@@ -422,6 +483,7 @@ function createURL(src) {
   border-radius: 1vw;
   font-family: 'ADLaM Display', sans-serif;
 }
+
 .ver-mais {
   text-align: center;
   margin-bottom: 10vh;
@@ -501,7 +563,6 @@ function createURL(src) {
 
 .carta {
   width: 17vw;
-  height: 55vh;
   border-radius: 23px;
   margin-bottom: 10vh;
   display: flex;
@@ -510,18 +571,43 @@ function createURL(src) {
   background-color: #d9d9d9;
   padding-top: 3vh;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding-bottom: 3vh;
 }
+
 .carta:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   transform: translateY(-2px);
   transition: 0.3s;
 }
 
 #titulos {
-  font-size: 2vw;
+  font-size: 2rem;
   font-family: 'ADLaM Display', sans-serif;
   text-decoration: underline #f50606 6px;
   margin-left: 10vw;
+}
+.add-carrinho {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.add-carrinho button {
+  padding: 10px 20px;
+  background-color: #7a0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'ADLaM Display', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1vh;
+  
+}
+
+.add-carrinho button:hover {
+  background-color: #5c0000;
 }
 
 main {
@@ -533,6 +619,36 @@ main {
   width: 30px;
   height: 30px;
 }
+
+
+.carousel__pagination {
+  position: relative;
+  bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-right: 45vw;
+
+}
+
+.carousel__pagination-button {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.carousel__pagination-button:hover {
+  background-color: #d9d9d9;
+}
+
+.carousel__pagination-button--active {
+  width: 60px;
+  background-color: #fff;
+  border-radius: 1vw;
+}
+
 
 .carousel-custom .carousel__next,
 .carousel-custom .carousel__prev {
@@ -573,8 +689,8 @@ main {
 
 .carousel-custom {
   position: relative;
-  width: 85%;
-  height: 55vh;
+  width: 88%;
+  height: 50vh;
   margin: 5vh auto;
   overflow: visible;
 }
@@ -806,5 +922,196 @@ header i {
 .linha-vertical {
   height: 2vh;
   border-left: 2px solid #d9d9d9;
+}
+@media (max-width: 768px) {
+  .newsletter {
+    flex-direction: row; /* Itens lado a lado */
+    justify-content: center; /* Centralizar */
+    align-items: center;
+    width: 90vw;
+    margin: 10vh auto;
+    gap: 2vw; /* Espaçamento entre os itens */
+  }
+
+  .newsletter .input-container {
+    width: 60%; /* Tamanho menor do input */
+    padding: 10px;
+  }
+
+  .newsletter input {
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 1.5vw; /* Tamanho adequado */
+    border-radius: 1vw;
+    background-color: #d9d9d9;
+    font-family: 'Actor', sans-serif;
+  }
+
+ 
+
+  /* Ajustando o título da newsletter */
+  .newsletter h3 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 3vh;
+    font-size: 1rem;
+    color: #d9d9d9; /* Adicionando cor */
+  }
+
+  .pokemon-day {
+    flex-direction: column;
+    height: auto;
+    width: 90vw;
+    padding: 10px;
+  }
+
+  .pokemon-info h3,
+  .pokemon-info p {
+    font-size: 5vw;
+  }
+
+  .mais-vendidas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5vw; /* ou ajuste o valor conforme necessário */
+  }
+
+  .carta {
+    width: 45%; /* duas cartas por linha (100% / 2 = 50%, mas com gap fica 45% para ajustes) */
+    height: auto; /* ajuste a altura das cartas conforme necessário */
+  }
+
+  
+  .sliderImage{
+    object-fit: contain;
+    background-color: red;
+  }
+  
+  
+  
+  .add-carrinho button {
+    padding: 8px 16px;  /* Reduzindo o padding */
+    font-size: 0.8rem;   /* Diminuindo o tamanho da fonte */
+    border-radius: 6px;  /* Ajustando o border-radius */
+  }
+ 
+
+  /* Aumentando o tamanho do nome da carta e do preço */
+  .nome {
+    font-size: 2.4vw; /* Aumentando o tamanho do nome da carta */
+  }
+
+  .preco {
+    font-size: 1.4vw; /* Aumentando o tamanho do preço */
+  }
+
+  .footer-cima {
+    flex-direction: column;
+    height: auto;
+    padding: 5vh 5vw;
+  }
+
+  .title-footer h1 {
+    font-size: 8vw;
+  }
+  .carousel-custom {
+    width: 88%;  /* Ajustando a largura do carrossel para telas menores */
+    height: 25.7vh; /* Ajustando a altura do carrossel */
+    margin: 5vh auto;  /* Centralizando o carrossel */
+  }
+
+  .carousel-slide {
+    font-size: 1.5vw;  /* Reduzindo o tamanho da fonte nos slides para telas menores */
+    padding: 0 2vw;  /* Adicionando um pouco de padding para dar espaço nos lados */
+  }
+
+  .carousel__pagination {
+    display: none;
+  }
+  .carousel-custom {
+    width: 88%;  /* Ajustando a largura do carrossel para telas menores */
+    height: 26.1vh; /* Ajustando a altura do carrossel */
+    margin: 5vh auto;  /* Centralizando o carrossel */
+    position: relative;  /* Tornando o carrossel um contêiner de posição relativa */
+  }
+
+  /* Botões de navegação do carrossel */
+  .carousel-custom .carousel__next,
+  .carousel-custom .carousel__prev {
+    width: 60px;  /* Tamanho do botão de navegação */
+    height: 60px; /* Tamanho do botão de navegação */
+    font-size: 18px;  /* Ajustando o tamanho da fonte do ícone dentro dos botões */
+    top: 50%;  /* Centralizando verticalmente */
+    transform: translateY(-50%);  /* Corrigindo o alinhamento vertical */
+    background-color: #fa7286;  /* Cor do botão */
+    border-radius: 50%;  /* Fazendo o botão ficar redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+   .carousel__next {
+    right: -17px;  /* Colocando o botão direito para fora do carrossel */
+    position: absolute;
+  }
+
+  .carousel__prev {
+    left: -17px;  /* Colocando o botão esquerdo para fora do carrossel */
+    position: absolute;
+  }
+
+  /* Mudança de cor ao passar o mouse */
+  .carousel__next:hover,
+  .carousel__prev:hover {
+    background-color: #e46b7b;  /* Cor de destaque ao passar o mouse */
+  }.pokemon-dia {
+    margin-top: 5vh;
+    width: 100%;
+  }
+
+  .pokemon-day {
+    flex-direction: row; /* Mudando para exibir lado a lado */
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+    width: 90vw;
+    padding: 2vh 4vw;
+    gap: 2vw; /* Ajuste do espaçamento */
+  }
+
+  .pokemon-info {
+    height: auto;
+    width: 45vw; /* Diminuindo para ficar proporcional */
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.5vh;
+  }
+
+  .pokemon-info h3 {
+    font-size: 4vw;
+  }
+
+  .pokemon-info p {
+    font-size: 3.5vw;
+  }
+
+  .pokemon-dia button {
+    font-size: 3.5vw;
+    padding: 6px 12px;
+    border-radius: 2vw;
+  }
+
+  .pokemon-image {
+    width: 40vw; /* Menor para ajustar lado a lado */
+    height: 40vw;
+  }
+
+  .pokemon-image img {
+    width: 85%;
+    height: 85%;
+    object-fit: cover; /* Garantindo que a imagem preencha bem o espaço */
+  }
+ 
 }
 </style>
