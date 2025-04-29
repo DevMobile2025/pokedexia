@@ -1231,4 +1231,312 @@ header i {
     border-left: 2px solid #d9d9d9;
   }
 }
+@media (max-width: 425px) {
+
+/* Newsletter */
+.newsletter {
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  margin: 5vh auto;
+  gap: 2vh;
+}
+
+.newsletter .input-container {
+  width: 90%;
+  padding: 10px;
+}
+
+.newsletter input {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: clamp(0.9rem, 4vw, 1.1rem);
+  border-radius: 1rem;
+  background-color: #d9d9d9;
+  font-family: 'Actor', sans-serif;
+}
+
+.newsletter h3 {
+  text-align: center;
+  width: 100%;
+  font-size: 1.1rem;
+  color: #d9d9d9;
+  margin-bottom: 2vh;
+}
+
+/* Pokémons */
+.pokemons {
+  width: 90vw;
+}
+
+.pokemons img {
+  width: 100%;
+}
+
+/* Cartas populares */
+.mais-vendidas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vh;
+}
+
+.carta {
+  width: 90%;
+  height: auto;
+}
+
+.nome {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+}
+
+.add-carrinho button {
+  padding: 8px 14px;
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  border-radius: 6px;
+}
+
+/* Pokémon do Dia */
+.pokemon-dia {
+  margin-top: 5vh;
+  width: 100%;
+}
+
+.pokemon-day {
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  padding: 2vh 4vw;
+  gap: 3vh;
+}
+
+.pokemon-image {
+  width: 60vw;
+  height: 60vw;
+}
+
+.pokemon-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pokemon-info {
+  width: 90%;
+  text-align: center;
+  align-items: center;
+  gap: 1vh;
+}
+
+.pokemon-info h3 {
+  font-size: clamp(1.1rem, 5vw, 1.3rem);
+}
+
+.pokemon-info p {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+}
+
+.pokemon-dia button {
+  font-size: clamp(1rem, 4vw, 1.1rem);
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+
+/* Carousel */
+.carousel-slide {
+  font-size: 0.9rem;
+  padding: 0 1rem;
+}
+
+.carousel__pagination {
+  display: none;
+}
+
+.carousel-custom {
+  width: 95%;
+  height: 30vh;
+  margin: 5vh auto;
+  position: relative;
+}
+
+.carousel-custom .carousel__next,
+.carousel-custom .carousel__prev {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fa7286;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.carousel__next {
+  right: -10px;
+}
+
+.carousel__prev {
+  left: -10px;
+}
+
+.carousel__next:hover,
+.carousel__prev:hover {
+  background-color: #e46b7b;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3.5vh 5vw;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  font-weight: bold;
+}
+
+header i {
+  font-size: 6vw;
+}
+
+.search-container {
+  flex: 1;
+  max-width: 85vw;
+  margin: 0 10px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px 16px 10px 36px;
+  border: 1px solid red;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-options p {
+  display: none;
+}
+
+.option {
+  width: 8vw;
+  display: flex;
+  justify-content: center;
+}
+
+.linha-vertical {
+  height: 2vh;
+  border-left: 2px solid #d9d9d9;
+}
+
+/* Footer */
+footer {
+  height: auto;
+  padding-bottom: 5vh;
+}
+
+.footer-cima {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vh;
+  padding: 5vh 5vw;
+}
+
+.title-footer h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.pokebola {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.contorno {
+  background-color: #d9d9d9;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center h2 {
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+}
+
+.contatos h4 {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+}
+
+.contatos {
+  margin-bottom: 4vh;
+  text-align: center;
+}
+.newsletter img {
+    display: none;
+  }
+
+  .footer-cima > *:not(.left) {
+    display: none;
+  }
+
+  .footer-cima {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 4vh 0;
+  }
+
+  footer hr {
+    width: 80%;
+    border: 1px solid #d9d9d9;
+    margin: 2vh auto;
+  }
+
+  footer p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #d9d9d9;
+  }
+  /* Deixa os botões de navegação maiores e mais afastados */
+
+  .carrossel-tipos .carousel__next {
+    right: -20px;
+    position: absolute;
+  }
+
+  .carrossel-tipos .carousel__prev {
+    left: -20px;
+    position: absolute;
+  }
+
+  .tipo-bola{
+    height: 50px;
+    width: 50px;
+  }
+ 
+  /* Deixa as bolinhas de paginação menores e alinhadas */
+  .carrossel-tipos .carousel__pagination-button,
+  .carrossel-tipos .carousel__pagination .carousel__pagination-item {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+}
+
+
+
+
+
+
 </style>
