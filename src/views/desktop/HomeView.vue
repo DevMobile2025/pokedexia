@@ -4,11 +4,7 @@ import 'vue3-carousel/carousel.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import { useCartStore } from '@/stores';
 import { useRouter } from 'vue-router';
-
-function createURL(src) {
-  const url = new URL(`../../assets/images/` + src, import.meta.url).href;
-  return url;
-}
+import { createURL } from '@/utils';
 
 const cartStore = useCartStore();
 const router = useRouter();
@@ -43,27 +39,27 @@ const router = useRouter();
     <Carousel :items-to-show="1" :wrap-around="true" class="carousel-custom">
       <Slide>
         <div class="carousel-slide">
-          <img src="@/assets/images/carrossel-1.png" alt="" class="sliderImage">
+          <img src="/images/carrossel-1.png" alt="" class="sliderImage">
         </div>
       </Slide>
       <Slide>
         <div class="carousel-slide">
-          <img src="@/assets/images/carrossel-2.png" alt="" class="sliderImage">
+          <img src="/images/carrossel-2.png" alt="" class="sliderImage">
         </div>
       </Slide>
       <Slide>
         <div class="carousel-slide">
-          <img src="@/assets/images/carrossel-3.png" alt="" class="sliderImage">
+          <img src="/images/carrossel-3.png" alt="" class="sliderImage">
         </div>
       </Slide>
       <Slide>
         <div class="carousel-slide">
-          <img src="@/assets/images/carrossel-4.png" alt="" class="sliderImage">
+          <img src="/images/carrossel-4.png" alt="" class="sliderImage">
         </div>
       </Slide>
       <Slide>
         <div class="carousel-slide">
-          <img src="@/assets/images/carrossel-5.png" alt="" class="sliderImage">
+          <img src="/images/carrossel-5.png" alt="" class="sliderImage">
         </div>
       </Slide>
 
@@ -157,7 +153,7 @@ const router = useRouter();
           <button class="see-cards">Ver cartas...</button>
         </div>
         <div class="pokemon-image">
-          <img src="@/assets/images/pikachu.png" alt="Pikachu" />
+          <img src="/images/pikachu.png" alt="Pikachu" />
         </div>
       </div>
     </div>
@@ -171,7 +167,7 @@ const router = useRouter();
         </div>
       </div>
       <div class="pokemons">
-        <img src="@/assets/images/pokemons.png" alt="">
+        <img src="/images/pokemons.png" alt="">
       </div>
     </div>
     <!-- <div>
@@ -209,7 +205,7 @@ const router = useRouter();
 
       <div class="right">
         <div class="contorno">
-          <img src="@/assets/images/pokebola.png" alt="" class="pokebola" />
+          <img src="/images/pokebola.png" alt="" class="pokebola" />
         </div>
       </div>
     </div>
