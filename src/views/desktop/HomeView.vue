@@ -1,13 +1,19 @@
 <script setup>
-import { db } from "@/api/db.js";
+import { db } from '@/api/db.js';
 import 'vue3-carousel/carousel.css';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+import { useCartStore } from '@/stores';
+import { useRouter } from 'vue-router';
 
 function createURL(src) {
-  const url = new URL(`../assets/images/` + src, import.meta.url).href;
+  const url = new URL(`../../assets/images/` + src, import.meta.url).href;
   return url;
 }
+
+const cartStore = useCartStore();
+const router = useRouter();
 </script>
+
 <template>
   <header>
     <div class="title">
@@ -27,7 +33,7 @@ function createURL(src) {
         <p>Sua Conta</p>
       </div>
       <div class="linha-vertical"></div>
-      <div class="option">
+      <div class="option" @click="router.push('cartshop')">
         <i class="bi bi-cart"></i>
         <p>Carrinho</p>
       </div>
@@ -69,203 +75,76 @@ function createURL(src) {
 
     <h2 id="titulos">Cartas Pokemon</h2>
     <div class="mais-vendidas">
-      <div class="carta">
+      <div class="carta" v-for="(product, productIndex) in db.pokemons" :key="productIndex">
         <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
+          <img :src="createURL(product.image)" alt="" class="img-pokemon" />
         </div>
         <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
+          <p class="nome">{{ product.name }}</p>
+          <p class="preco">R$ {{ product.price.toFixed(2).replace(".", ",") }}</p>
         </div>
         <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
+          <button @click="cartStore.updateCard(product.id)">Adicionar ao carrinho</button>
         </div>
       </div>
     </div>
-    <h2 id="titulos">Filtrar por tipo:</h2>
+    <!-- <h2 id="titulos">Filtrar por tipo:</h2>
 
     <div class="carrossel-tipos">
       <div class="underline"></div>
 
-      <Carousel :items-to-show="5" :wrap-around="true" class="carousel-tipos">
+      <Carousel :items-to-show="4" :wrap-around="true" class="carousel-tipos">
         <Slide>
-          <div class="tipo-bola" style="background-color: #5c5c70"></div>
+          <div class="tipo-bola">
+            <img class="icon-logo" src="@/assets/images/logos/logo-branca.jpeg" alt="">
+          </div>
         </Slide>
         <Slide>
-          <div class="tipo-bola" style="background-color: #f5d547"></div>
+          <div class="tipo-bola">
+            <img class="icon-logo" src="@/assets/images/logos/logo-amarela.jpeg" alt="">
+          </div>
         </Slide>
         <Slide>
-          <div class="tipo-bola" style="background-color: #2589d6"></div>
+          <div class="tipo-bola" style="background-color: #2589d6">
+            <img class="icon-logo" src="@/assets/images/logos/logo-azul.jpeg" alt="">
+          </div>
         </Slide>
         <Slide>
-          <div class="tipo-bola" style="background-color: #f44336"></div>
+          <div class="tipo-bola">
+            <img class="icon-logo" src="@/assets/images/logos/logo-vermelha.jpeg" alt="">
+          </div>
         </Slide>
         <Slide>
-          <div class="tipo-bola" style="background-color: #ec8eff"></div>
+          <div class="tipo-bola">
+            <img class="icon-logo" src="@/assets/images/logos/logo-roxa.jpeg" alt="">
+          </div>
         </Slide>
         <Slide>
-          <div class="tipo-bola" style="background-color: #ff9900"></div>
+          <div class="tipo-bola">
+            <img class="icon-logo" src="@/assets/images/logos/logo-laranja.jpeg" alt="">
+          </div>
         </Slide>
         <Slide>
-          <div class="tipo-bola" style="background-color: #8baeff"></div>
+          <div class="tipo-bola">
+            <img class="icon-logo" src="@/assets/images/logos/logo-preta.jpeg" alt="">
+          </div>
         </Slide>
         <Slide>
-          <div class="tipo-bola" style="background-color: #a8a77a"></div>
+          <div class="tipo-bola">
+            <img class="icon-logo" src="@/assets/images/logos/logo-dourada.jpeg" alt="">
+          </div>
         </Slide>
         <Slide>
-          <div class="tipo-bola" style="background-color: #c22e28"></div>
-        </Slide>
-        <Slide>
-          <div class="tipo-bola" style="background-color: #7ac74c"></div>
+          <div class="tipo-bola" style="background-color: #c22e28">
+            <img class="icon-logo" src="@/assets/images/logos/logo-cinza.jpeg" alt="">
+          </div>
         </Slide>
 
         <template #addons>
           <Navigation />
         </template>
       </Carousel>
-    </div>
-
-    <h3
-      style="color: #470000;margin-left: 10vw;margin-top: 10vh;font-size: 1.5rem;font-family:ADLaM Display,sans-serif;">
-      Mais vendidos</h3>
-
-    <div class="mais-vendidas">
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="carta">
-        <div class="carta-img">
-          <img src="@/assets/images/clefairy.jpeg" alt="" class="img-pokemon" />
-        </div>
-        <div class="nome-preco">
-          <p class="nome">Clefairy</p>
-          <p class="preco">R$ 450,00</p>
-        </div>
-        <div class="add-carrinho">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
-    </div>
-    <div class="ver-mais">
-      <button>Ver Mais...</button>
-    </div>
+    </div> -->
 
     <h2 id="titulos">Pokemon do dia</h2>
     <div class="pokemon-dia">
@@ -515,6 +394,12 @@ function createURL(src) {
   margin: auto;
 }
 
+.icon-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
 .nome-preco {
   text-align: center;
   margin-top: 3.5%;
@@ -572,6 +457,7 @@ function createURL(src) {
   font-size: 2rem;
   font-family: 'ADLaM Display', sans-serif;
   text-decoration: underline #f50606 6px;
+  margin-top: 8vh;
   margin-left: 10vw;
 }
 
@@ -1530,3 +1416,4 @@ footer {
     margin: 0 4px;
   }
 }
+</style>
