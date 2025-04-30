@@ -17,3 +17,5 @@ app.use(Toast, {
 })
 
 app.mount('#app')
+
+import 'bootstrap-icons/font/bootstrap-icons.css'
