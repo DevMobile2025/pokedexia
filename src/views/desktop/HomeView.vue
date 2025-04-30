@@ -1,12 +1,13 @@
 <script setup>
 import { db } from "@/api/db.js";
+import 'vue3-carousel/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 function createURL(src) {
   const url = new URL(`../assets/images/` + src, import.meta.url).href;
   return url;
 }
 </script>
-
 <template>
   <header>
     <div class="title">
@@ -338,7 +339,7 @@ function createURL(src) {
   </footer>
 </template>
 
-<style>
+<style scoped>
 .email {
   display: flex;
   align-items: center;
@@ -1529,10 +1530,3 @@ footer {
     margin: 0 4px;
   }
 }
-
-
-
-
-
-
-</style>
