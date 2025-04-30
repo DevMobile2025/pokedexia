@@ -1,8 +1,10 @@
 import { ref, computed } from 'vue';
 import { defineStore } from 'pinia';
+import { useToastStore } from '@/stores';
 
 export const useCartStore = defineStore('cart', () => {
-    const productsInCart = ref([{id: 0, amount: 3}, {id: 1, amount: 1}]);
+    const productsInCart = ref([]);
+    const toastStore = useToastStore();
 
     const amountItems = computed(() => productsInCart.value.length);
 
@@ -15,9 +17,11 @@ export const useCartStore = defineStore('cart', () => {
         console.log(index);
         if (index != -1) {
           productsInCart.value[index].amount++;
+          toastStore.sucess(`Quantidade do produto aumentada para ${productsInCart.value[index].amount} com sucesso!`)
         }
         else {
             productsInCart.value.push({id: productId, amount: 1});
+            toastStore.sucess("Produto adicionado ao carrinho com sucesso!")
         }
     }
 
@@ -27,6 +31,7 @@ export const useCartStore = defineStore('cart', () => {
 
     const removeItem = (index) => {
         productsInCart.value.splice(index, 1);
+        toastStore.sucess("Produto removido com sucesso!");
     }
     
 

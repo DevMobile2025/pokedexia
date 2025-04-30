@@ -28,7 +28,6 @@ function removeItem(productId) {
   
   cartStore.removeItem(index);
   products.value.splice(index, 1);
-  toastStore.sucess("Produto removido com sucesso!");
 }
 
 onMounted(async() => {
