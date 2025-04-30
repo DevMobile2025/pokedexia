@@ -80,10 +80,10 @@ onMounted(async() => {
           </div>
           <div class="container-final-price">
             <p class="final-price">PREÇO TOTAL</p>
-            <p class="final-amount">R$ {{ priceAllWithDelivery.toFixed(2).replace(".", ",") }}</p>
+            <p class="final-amount">R$ {{ cartStore.amountItems == 0 ? '0,00' : priceAllWithDelivery.toFixed(2).replace(".", ",") }}</p>
           </div>
           <div class="container-payment">
-            <button class="btn-payment" @click="router.push('sucess')">PAGAR</button>
+            <button class="btn-payment" @click="router.push('sucess'); cartStore.productsInCart = [];">PAGAR</button>
           </div>
         </div>
       </div>

@@ -799,6 +799,12 @@ header i {
   border-left: 2px solid #d9d9d9;
 }
 
+@media (max-width: 1024px) {
+  .carta {
+    width: 25vw;
+  }
+}
+
 @media (max-width: 768px) {
 
 
