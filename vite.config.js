@@ -21,13 +21,13 @@ export default defineConfig({
         start_url: 'https://pokedexia-suh0.onrender.com/',
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: '/images/pwa/android/pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any',
           },
           {
-            src: 'pwa-512x512.png',
+            src: '/images/pwa/android/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable',
@@ -36,7 +36,6 @@ export default defineConfig({
         id: 'com.pokedexia.app',
         orientation: 'any',
         background_color: '#ffffff',
-        start_url: '.',
         launch_handler: {
           client_mode: ['navigate-existing', 'auto'],
         },
