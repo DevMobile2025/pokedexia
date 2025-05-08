@@ -12,7 +12,7 @@ export default defineConfig({
     vueDevTools(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['pwa-180x180.png'],
+      includeAssets: ['pwa-180-180.png'],
       manifest: {
         name: 'Pokedexia',
         short_name: 'pokedexia',
@@ -21,13 +21,13 @@ export default defineConfig({
         start_url: 'https://pokedexia-suh0.onrender.com/',
         icons: [
           {
-            src: '/images/pwa/android/pwa-192x192.png',
+            src: '/images/pwa/android/pwa-192-192.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any',
           },
           {
-            src: '/images/pwa/android/pwa-512x512.png',
+            src: '/images/pwa/android/pwa-512-512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable',
